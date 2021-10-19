@@ -49,6 +49,31 @@ class _QuizAppState extends State<QuizApp> {
   var rightAnswerCount = 0;
   var wrongAnswerCount = 0;
   var currentIndex = 0;
+
+  validateAnswer(userInput) {
+    if (currentIndex < questions.length - 1) {
+      if (userInput == questions[currentIndex]["answer"]) {
+        setState(() {
+          rightAnswerCount++;
+          currentIndex++;
+        });
+      } else {
+        setState(() {
+          wrongAnswerCount++;
+          currentIndex++;
+        });
+      }
+    }
+  }
+
+  reset() {
+    setState(() {
+      var rightAnswerCount = 0;
+      var wrongAnswerCount = 0;
+      var currentIndex = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -62,19 +87,27 @@ class _QuizAppState extends State<QuizApp> {
             children: [
               Text("${questions[currentIndex]["question"]}"),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  validateAnswer(questions[currentIndex]["options_a"]);
+                },
                 child: Text("${questions[currentIndex]["options_a"]}"),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  validateAnswer(questions[currentIndex]["options_b"]);
+                },
                 child: Text("${questions[currentIndex]["options_b"]}"),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  validateAnswer(questions[currentIndex]["options_c"]);
+                },
                 child: Text("${questions[currentIndex]["options_c"]}"),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  validateAnswer(questions[currentIndex]["options_d"]);
+                },
                 child: Text("${questions[currentIndex]["options_d"]}"),
               ),
             ],
