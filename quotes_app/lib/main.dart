@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Center(child: Text('Shani Quotes')),
+          backgroundColor: Colors.black,
+        ),
         body: Container(
           padding: EdgeInsets.all(8),
           child: GridView.count(
