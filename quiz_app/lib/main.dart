@@ -60,20 +60,22 @@ class _QuizAppState extends State<QuizApp> {
   var currentIndex = 0;
 
   validateAnswer(userInput) {
-    if (currentIndex < questions.length - 1) {
+    if (currentIndex <= questions.length - 1) {
       if (userInput == questions[currentIndex]["answer"]) {
         setState(() {
           rightAnswerCount += 1;
-          currentIndex += 1;
         });
       } else {
         setState(() {
           wrongAnswerCount += 1;
-          currentIndex += 1;
         });
       }
-    } else {
-      reset();
+
+      if (currentIndex != questions.length - 1) {
+        setState(() {
+          currentIndex++;
+        });
+      }
     }
   }
 
