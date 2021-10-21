@@ -13,30 +13,83 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
+          padding: EdgeInsets.all(8),
           child: GridView.count(
             crossAxisCount: 2,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
             children: [
               Container(
-                height: 100,
-                width: 100,
-                color: Colors.amberAccent,
+                child: Image.asset(
+                  'assets/images/1.jpg',
+                  fit: BoxFit.cover,
+                ),
               ),
               Container(
-                height: 100,
-                width: 100,
-                color: Colors.amberAccent,
+                child: Image.asset(
+                  'assets/images/2.jpg',
+                  fit: BoxFit.cover,
+                ),
               ),
               Container(
-                height: 100,
-                width: 100,
-                color: Colors.amberAccent,
+                child: Image.asset(
+                  'assets/images/3.jpg',
+                  fit: BoxFit.cover,
+                ),
               ),
               Container(
-                height: 100,
-                width: 100,
-                color: Colors.amberAccent,
+                child: Image.asset(
+                  'assets/images/4.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/images/5.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/images/6.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/images/7.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/images/8.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/images/9.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/images/10.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/images/11.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/images/12.jpg',
+                  fit: BoxFit.cover,
+                ),
               ),
             ],
           ),
