@@ -70,12 +70,11 @@ class _QuizAppState extends State<QuizApp> {
           wrongAnswerCount += 1;
         });
       }
-
-      if (currentIndex != questions.length - 1) {
-        setState(() {
-          currentIndex++;
-        });
-      }
+    }
+    if (currentIndex != questions.length - 1) {
+      setState(() {
+        currentIndex++;
+      });
     }
   }
 
