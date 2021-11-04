@@ -24,7 +24,7 @@ class ImageList extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                Get.to(ImageDetails());
+                Get.to(ImageDetails('assets/images/1.jpg'));
               },
               child: Container(
                 child: Image.asset(
