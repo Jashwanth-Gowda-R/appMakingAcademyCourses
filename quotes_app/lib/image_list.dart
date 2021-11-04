@@ -32,6 +32,12 @@ class _ImageListState extends State<ImageList> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    getdata();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -52,8 +58,7 @@ class _ImageListState extends State<ImageList> {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8),
               itemBuilder: (buildcontext, index) {
-                return ImageCard(
-                    imageList[index]['image']['url']);
+                return ImageCard(imageList[index]['image']['url']);
               })
 
           // GridView.count(
