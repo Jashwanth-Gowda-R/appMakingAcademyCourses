@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
+import 'package:quotes_app/custom-widgets/image_card.dart';
 import 'package:quotes_app/image_details.dart';
 import 'package:get/get.dart';
 
@@ -22,83 +23,18 @@ class ImageList extends StatelessWidget {
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
           children: [
-            GestureDetector(
-              onTap: () {
-                Get.to(ImageDetails('assets/images/1.jpg'));
-              },
-              child: Container(
-                child: Image.asset(
-                  'assets/images/1.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/2.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/3.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/4.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/5.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/6.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/7.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/8.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/9.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/10.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/11.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'assets/images/12.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
+            ImageCard('assets/images/1.jpg'),
+            ImageCard('assets/images/2.jpg'),
+            ImageCard('assets/images/3.jpg'),
+            ImageCard('assets/images/4.jpg'),
+            ImageCard('assets/images/5.jpg'),
+            ImageCard('assets/images/6.jpg'),
+            ImageCard('assets/images/7.jpg'),
+            ImageCard('assets/images/8.jpg'),
+            ImageCard('assets/images/9.jpg'),
+            ImageCard('assets/images/10.jpg'),
+            ImageCard('assets/images/11.jpg'),
+            ImageCard('assets/images/12.jpg'),
           ],
         ),
       ),
