@@ -1,18 +1,31 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, avoid_print
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:quotes_app/custom-widgets/image_card.dart';
 
-class ImageList extends StatelessWidget {
+class ImageList extends StatefulWidget {
   const ImageList({Key key}) : super(key: key);
+
+  @override
+  State<ImageList> createState() => _ImageListState();
+}
+
+class _ImageListState extends State<ImageList> {
+  var imageList = [];
 
   getdata() {
     http
         .get(Uri.parse('http://192.168.0.101:1337/quotes-flutter-apps'))
         .then((res) {
-      print(res.body);
+      // print(res.body);
+      setState(() {
+        imageList = jsonDecode(res.body);
+      });
+      print(imageList);
     }).catchError((err) {
       print(err);
     });
