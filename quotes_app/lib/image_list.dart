@@ -1,13 +1,22 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
+import 'package:http/http.dart' as http;
+
 import 'package:quotes_app/custom-widgets/image_card.dart';
-import 'package:quotes_app/image_details.dart';
-import 'package:get/get.dart';
 
 class ImageList extends StatelessWidget {
   const ImageList({Key key}) : super(key: key);
+
+  getdata() {
+    http
+        .get(Uri.parse('http://192.168.0.101:1337/quotes-flutter-apps'))
+        .then((res) {
+      print(res.body);
+    }).catchError((err) {
+      print(err);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +24,13 @@ class ImageList extends StatelessWidget {
       appBar: AppBar(
         title: Center(child: Text('Shani Quotes')),
         backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+              onPressed: () {
+                getdata();
+              },
+              icon: Icon(Icons.refresh))
+        ],
       ),
       body: Container(
         padding: EdgeInsets.all(8),
