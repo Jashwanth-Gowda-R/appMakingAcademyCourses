@@ -53,7 +53,7 @@ class _ImageListState extends State<ImageList> {
                   crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8),
               itemBuilder: (buildcontext, index) {
                 return ImageCard(
-                    imageList[index]['image']['formats']['large']['url']);
+                    imageList[index]['image']['url']);
               })
 
           // GridView.count(
