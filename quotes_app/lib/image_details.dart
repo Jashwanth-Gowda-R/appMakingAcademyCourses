@@ -5,6 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:quotes_app/constants.dart';
+import 'package:share/share.dart';
 
 class ImageDetails extends StatelessWidget {
   var filename;
@@ -38,7 +39,9 @@ class ImageDetails extends StatelessWidget {
           Align(
             alignment: Alignment.bottomRight,
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Share.share(Constants().ipaddress + filename);
+                },
                 icon: Icon(
                   Icons.share,
                 )),
