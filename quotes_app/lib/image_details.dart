@@ -6,8 +6,11 @@ class ImageDetails extends StatelessWidget {
   var filename;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Image.asset(filename),
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+          // child: Image.asset(filename),
+          ),
     );
   }
 }

@@ -1,6 +1,9 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/instance_manager.dart';
+import 'package:quotes_app/image_details.dart';
+import 'package:get/get.dart';
 
 class ImageList extends StatelessWidget {
   const ImageList({Key key}) : super(key: key);
@@ -19,10 +22,15 @@ class ImageList extends StatelessWidget {
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
           children: [
-            Container(
-              child: Image.asset(
-                'assets/images/1.jpg',
-                fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () {
+                Get.to(ImageDetails());
+              },
+              child: Container(
+                child: Image.asset(
+                  'assets/images/1.jpg',
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Container(
