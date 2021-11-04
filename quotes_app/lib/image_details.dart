@@ -1,8 +1,10 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:quotes_app/constants.dart';
 
 class ImageDetails extends StatelessWidget {
   var filename;
@@ -21,7 +23,9 @@ class ImageDetails extends StatelessWidget {
             child: Container(
                 height: double.infinity,
                 width: double.infinity,
-                child: Image.network('http://192.168.0.101:1337' + filename)),
+                child: Image.network(
+                  Constants().ipaddress + filename,
+                )),
           ),
           Align(
               alignment: Alignment.topLeft,
@@ -31,6 +35,14 @@ class ImageDetails extends StatelessWidget {
                 },
                 icon: Icon(Icons.arrow_back),
               )),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.share,
+                )),
+          )
         ],
       )),
     );

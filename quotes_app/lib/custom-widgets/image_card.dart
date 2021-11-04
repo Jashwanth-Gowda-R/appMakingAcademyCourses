@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:quotes_app/image_details.dart';
 import 'package:get/get.dart';
+import 'package:quotes_app/constants.dart';
 
 class ImageCard extends StatelessWidget {
   var filename;
@@ -17,7 +18,7 @@ class ImageCard extends StatelessWidget {
       },
       child: Container(
         child: Image.network(
-          'http://192.168.0.101:1337' + filename,
+          Constants().ipaddress + filename,
           fit: BoxFit.cover,
         ),
       ),

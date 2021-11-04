@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:quotes_app/constants.dart';
 
 import 'package:quotes_app/custom-widgets/image_card.dart';
 
@@ -19,7 +20,7 @@ class _ImageListState extends State<ImageList> {
 
   getdata() {
     http
-        .get(Uri.parse('http://192.168.0.101:1337/quotes-flutter-apps'))
+        .get(Uri.parse(Constants().ipaddress + '/quotes-flutter-apps'))
         .then((res) {
       // print(res.body);
       setState(() {
