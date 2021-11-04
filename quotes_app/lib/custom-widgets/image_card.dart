@@ -16,8 +16,8 @@ class ImageCard extends StatelessWidget {
         Get.to(ImageDetails(filename));
       },
       child: Container(
-        child: Image.asset(
-          filename,
+        child: Image.network(
+          'http://192.168.0.101:1337' + filename,
           fit: BoxFit.cover,
         ),
       ),

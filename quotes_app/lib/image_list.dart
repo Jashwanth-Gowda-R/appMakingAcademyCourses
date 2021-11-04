@@ -46,27 +46,36 @@ class _ImageListState extends State<ImageList> {
         ],
       ),
       body: Container(
-        padding: EdgeInsets.all(8),
-        child: GridView.count(
-          crossAxisCount: 2,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-          children: [
-            ImageCard('assets/images/1.jpg'),
-            ImageCard('assets/images/2.jpg'),
-            ImageCard('assets/images/3.jpg'),
-            ImageCard('assets/images/4.jpg'),
-            ImageCard('assets/images/5.jpg'),
-            ImageCard('assets/images/6.jpg'),
-            ImageCard('assets/images/7.jpg'),
-            ImageCard('assets/images/8.jpg'),
-            ImageCard('assets/images/9.jpg'),
-            ImageCard('assets/images/10.jpg'),
-            ImageCard('assets/images/11.jpg'),
-            ImageCard('assets/images/12.jpg'),
-          ],
-        ),
-      ),
+          padding: EdgeInsets.all(8),
+          child: GridView.builder(
+              itemCount: imageList.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8),
+              itemBuilder: (buildcontext, index) {
+                return ImageCard(
+                    imageList[index]['image']['formats']['large']['url']);
+              })
+
+          // GridView.count(
+          //   crossAxisCount: 2,
+          //   crossAxisSpacing: 8,
+          //   mainAxisSpacing: 8,
+          //   children: [
+          //     ImageCard('assets/images/1.jpg'),
+          //     ImageCard('assets/images/2.jpg'),
+          //     ImageCard('assets/images/3.jpg'),
+          //     ImageCard('assets/images/4.jpg'),
+          //     ImageCard('assets/images/5.jpg'),
+          //     ImageCard('assets/images/6.jpg'),
+          //     ImageCard('assets/images/7.jpg'),
+          //     ImageCard('assets/images/8.jpg'),
+          //     ImageCard('assets/images/9.jpg'),
+          //     ImageCard('assets/images/10.jpg'),
+          //     ImageCard('assets/images/11.jpg'),
+          //     ImageCard('assets/images/12.jpg'),
+          //   ],
+          // ),
+          ),
     );
   }
 }
