@@ -13,11 +13,11 @@ class ImageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(ImageDetails(this.filename));
+        Get.to(ImageDetails(filename));
       },
       child: Container(
         child: Image.asset(
-          this.filename,
+          filename,
           fit: BoxFit.cover,
         ),
       ),
